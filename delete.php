@@ -8,6 +8,7 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
 
+// Connect to database
 $pdo = new PDO($dsn, 'root', '', $options);
 
 if (isset($_GET['id'])) {
