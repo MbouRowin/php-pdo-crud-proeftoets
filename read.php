@@ -8,8 +8,10 @@ $options = [
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
 
+// Connect to database
 $pdo = new PDO($dsn, 'root', '', $options);
 
+// Select all people
 $people = $pdo->query('SELECT * FROM RichestPeople ORDER BY Networth DESC');
 
 ?>
