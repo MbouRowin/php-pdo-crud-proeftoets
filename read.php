@@ -27,6 +27,11 @@ $people = $pdo->query('SELECT * FROM RichestPeople ORDER BY Networth DESC');
         th {
             border: 1px solid black;
         }
+
+        a,
+        svg {
+            display: block;
+        }
     </style>
 </head>
 
