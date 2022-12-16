@@ -11,6 +11,7 @@ $options = [
 // Connect to database
 $pdo = new PDO($dsn, 'root', '', $options);
 
+// Check if request has id parameter
 if (isset($_GET['id'])) {
     $stmt = $pdo->prepare('DELETE FROM RichestPeople WHERE Id = :Id');
     $stmt->bindValue(":Id", $_GET['id']);
