@@ -13,9 +13,13 @@ $pdo = new PDO($dsn, 'root', '', $options);
 
 // Check if request has id parameter
 if (isset($_GET['id'])) {
+    // Delete person by ID
     $stmt = $pdo->prepare('DELETE FROM RichestPeople WHERE Id = :Id');
     $stmt->bindValue(":Id", $_GET['id']);
     $stmt->execute();
+
+    // Redirect to read.php after 3 seconds
     header('Refresh: 3; url=read.php');
+    
     echo "Record verwijderd.";
 }
